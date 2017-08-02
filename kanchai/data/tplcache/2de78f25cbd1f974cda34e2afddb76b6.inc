@@ -1,0 +1,1 @@
+<a href='[field:link/]' title="[field:tag /]" target="_blank" class="btn">[field:tag /]</a>

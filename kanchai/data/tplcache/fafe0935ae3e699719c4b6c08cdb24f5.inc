@@ -1,0 +1,1 @@
+<li class="rwbd-[field:global name=autoindex runphp='yes']@me=@me;[/field:global]"><a href="[field:arcurl/]" target="_blank" title="[field:title/]">[field:title/]</a></li>

@@ -1,0 +1,1 @@
+<li  class="dropdown nav-dropdown"><a href='[field:typeurl/]'>{dede:field name='typename'/}</a></li>

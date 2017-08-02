@@ -1,0 +1,110 @@
+
+<!DOCTYPE HTML>
+<!--[if lt IE 7 ]> <html lang="zh-CN" class="ie6 ielt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="zh-CN" class="ie7 ielt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="zh-CN" class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="zh-CN">
+    <!--<![endif]-->
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+        <title>{dede:global.cfg_webname/}</title>
+        <meta name="description" content="{dede:global.cfg_description/}" />
+        <meta name="keywords" content="{dede:global.cfg_keywords/}" />
+        <link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/css/index.css" />
+        <link href="{dede:global.cfg_templets_skin/}/css/skitter.styles.css" type="text/css" media="all" rel="stylesheet" />
+
+        <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/Common.js"></script>
+        <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/more.js"></script>
+        <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/script.js"></script>
+        <script type="text/javascript" language="javascript" src="{dede:global.cfg_templets_skin/}/js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript" language="javascript" src="{dede:global.cfg_templets_skin/}/js/jquery.skitter.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.box_skitter_large').skitter({
+                    theme: 'clean',
+                    dots: true,
+                    preview: false,
+                    numbers_align: 'right'
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="warp"> 
+            <!--头部开始--> 
+            {dede:include filename="headerNav.html"/}
+
+            <!--头部结束-->
+            <!--主体开始-->
+            <div class="content">
+                <div class="content_home">
+                    <div class="home_left">
+                        {dede:include filename="index_banner.html"/}
+                        <div class="hljxdd">
+                            <div class="hljxdd-title">
+                                <div class="hljxddttxt">头条新闻</div>
+                                <hr>
+                            </div>
+                            <div class="hljxdd-content"> 
+
+                                {dede:arclist  flag="h" typeid='top' row='5' titlelen='60'  }     
+                                <div class="hljxddc-box m[field:global name=autoindex runphp='yes']@me=@me;[/field:global]">
+                                    <div class="hljxddc-box-pic"><a href="[field:arcurl/]" target="_blank"><img src="[field:litpic/]" alt="[field:keywords/]" width='250' height='165'/></a></div>
+                                    <div class="hljxddc-box-txt"><a href="[field:arcurl/]" target="_blank">[field:title/]</a></div>
+                                </div>
+                                {/dede:arclist}   
+
+                            </div>
+                        </div>
+                        <!--广告位-->
+                        <div class="hlad1">
+                            {dede:myad name='1'/}
+                        </div>
+
+
+                        <div class="hlrmtj">
+                            <div class="hlrmtj-title">
+                                <div class="hlrmtjttxt">热门推荐</div>
+                                <hr>
+                            </div>
+                            <div class="hlrmtj-content" id="mainList" > 
+                                <ul>
+
+                                    {dede:arclist flag='c'  typeid='top' row='5' titlelen='60'  }
+                                    <li class="rtmj-box">
+                                        <dl>
+                                            <dt>
+                                            <a href="[field:arcurl/]"  target="_blank" title="[field:title/]"> 
+                                                <img src="[field:litpic/]" alt="[field:keywords/]" width="250" height="165"/> 
+                                            </a>
+                                            </dt>
+                                            <dd>
+                                                <h3><a href="[field:arcurl/]"  target="_blank" title="[field:title/]">[field:title/]</a></h3>
+                                                <p>[field:description/]</p>
+                                                <p>[field:writer/]  /  [field:source/]  / [field:pubdate function="MyDate('Y-m-d H:i',@me)"/]</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    {/dede:arclist}  
+                                </ul>       
+                            </div>
+                            <div class="rtmj-more" id="moreBtn"><a href="javascript:;" class="btn hlmore">更多文章</a></div>
+                        </div>
+                    </div>
+                    {dede:include filename="right.html"/}
+                </div>
+                <!--主体结束-->
+                <!--  友情链接开始-->
+
+                {dede:include filename="link.html"/}
+                <!--友情链接结束底部开始--> 
+            </div>
+        </div>  
+        {dede:include filename="footer.html"/}     
+
+        </body>
+        </html>

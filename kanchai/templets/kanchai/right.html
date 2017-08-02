@@ -1,0 +1,47 @@
+<div class="home_right">
+
+    <div class="hrrmht">
+        <div class="hrrmht-title">
+            <div class="hrrmhtttxt">热门话题</div>
+            <hr>
+        </div>
+        <div class="hrrmht-content">
+            <ul>
+
+                {dede:tag sort='month' row="16" getall='1'}
+                <li><a href='[field:link/]' class="btn">[field:tag /]</a></li>
+                {/dede:tag}
+            </ul>
+        </div>
+    </div>
+    <div class="hrrwbd">
+        <div class="hrrwbd-title">
+            <div class="hrrwbdttxt">热门榜文</div>
+            <hr>
+        </div>
+        <div class="hrrwbd-content">
+            <ul>
+                {dede:arclist  flag="f" typeid='1,2,3' row='10' titlelen='60'  }
+                <li class="rwbd-[field:global name=autoindex runphp='yes']@me=@me;[/field:global]"><a href="[field:arcurl/]" target="_blank" title="[field:title/]">[field:title/]</a></li>
+                {/dede:arclist}
+            </ul>
+        </div>
+    </div>
+    <div class="hrtjzz">
+        <div class="hrrwbd">
+            <div class="hrrwbd-title">
+                <div class="hrrwbdttxt">最新快报</div>
+                <hr>
+            </div>
+            <div class="hrrwbd-content">
+                <ul>
+                    {dede:arclist  flag="a" typeid='1,2,3' row='10' titlelen='60'  }
+                    <li class="rwbd-[field:global name=autoindex runphp='yes']@me=@me;[/field:global]"><a href="[field:arcurl/]" target="_blank" title="[field:title/]">[field:title/]</a></li>
+                    {/dede:arclist}
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    
